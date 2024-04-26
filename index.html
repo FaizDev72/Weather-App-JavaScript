@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App Using JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex items-start justify-center w-full pt-16">
+    <div class="flex items-center justify-center flex-col space-y-10 w-3/4">
+      <h1 class="text-4xl font-bold uppercase text-white">Weather App</h1>
+
+      <!-- Navigation -->
+      <ul class="navigation flex items-center justify-between navigation">
+        <li
+          user-tab
+          class="cursor-pointer  px-3 py-2 tracking-wide font-semibold text-white my-weather-navigator"
+        >
+          Your Weather
+        </li>
+        <li
+          search-tab
+          class="cursor-pointer px-3 py-2 tracking-wide font-semibold text-white rounded-xl search-weather-navigator"
+        >
+          Search Weather
+        </li>
+      </ul>
+
+      <!-- User Grant Access Container -->
+      <div
+        class="grant-access-container flex items-center hidden justify-center flex-col gap-4"
+      >
+        <img src="assets/location.png" class="w-[80px] mb-7" alt="" />
+        <h1 class="text-4xl text-white font-semibold">Grant Location Access</h1>
+        <p class="location-msg text-[18px] text-white">
+          Allow Access To Get Weather Information
+        </p>
+        <button
+          class="grant-access-btn bg-[#dbe2ef63] px-4 py-2 rounded-xl font-semibold text-white"
+        >
+          Grant Access
+        </button>
+      </div>
+
+      <!-- Search Weather Container -->
+      <form
+        action=""
+        class="search-container w-full hidden items-center justify-center"
+      >
+        <input
+          type="search"
+          name=""
+          id="search-input"
+          class="bg-[#dbe2ef63] h-[40px] me-2 rounded-xl w-[calc(100%-80px)] focus:border-white focus:border outline-none px-3 text-white placeholder:text-white font-semibold border"
+          placeholder="Search for city..."
+        />
+        <button class="bg-[#dbe2ef63] p-2 rounded-full">
+          <img src="assets/search.png" alt="" class="w-[20px]" />
+        </button>
+      </form>
+
+      <!-- Loading Container -->
+      <div class="loading-container hidden flex flex-col">
+        <img src="./assets/loading.gif" width="150" height="150" />
+        <p class="font-semibold text-white text-2xl text-center">Loading</p>
+      </div>
+
+      <!-- User Weather Container -->
+      <div
+        class="user-info-container hidden items-center justify-center flex-col space-y-4"
+      >
+        <div class="flex items-center justify-center space-x-3">
+          <h1 class="text-4xl tracking-wide font-semibold text-white city-name" >
+            Borivali
+          </h1>
+          <img src="assets/in.png" alt="" class="w-[30px] country-flag" />
+        </div>
+        <h4 class="text-2xl text-white weather-desc">Clouds</h4>
+        <img src="assets/03d.png" alt="" class="w-[90px] weather-icon" />
+
+        <h1 class="text-4xl font-bold text-white temperature">31.34 °C</h1>
+
+        <div
+          class="flex items-center justify-between space-x-8"
+          style="margin-top: 40px"
+        >
+          <div
+            class="flex items-center justify-center flex-col space-y-2 bg-[#dbe2ef63] py-3 px-7 rounded-xl flex-1 w-[170px]"
+          >
+            <img src="assets/wind.png" alt="" class="w-[50px]" />
+            <h4 class="text-xl font-semibold tracking-wide">WINDSPEED</h4>
+            <h5 class="text-xl font-semibold tracking-wide windspeed">5.52m/s</h5>
+          </div>
+          <div
+            class="flex items-center justify-center flex-col space-y-2 bg-[#dbe2ef63] py-3 px-7 rounded-xl flex-1 w-[170px]"
+          >
+            <img src="assets/humidity.png" alt="" class="w-[50px]" />
+            <h4 class="text-xl font-semibold tracking-wide">HUMIDITY</h4>
+            <h5 class="text-xl font-semibold tracking-wide humidity">65%</h5>
+          </div>
+          <div
+            class="flex items-center justify-center flex-col space-y-2 bg-[#dbe2ef63] py-3 px-7 rounded-xl flex-1 w-[170px]"
+          >
+            <img src="assets/cloud.png" alt="" class="w-[50px]" />
+            <h4 class="text-xl font-semibold tracking-wide">CLOUDS</h4>
+            <h5 class="text-xl font-semibold tracking-wide cloudiness">40%</h5>
+          </div>
+        </div>
+      </div>
+      
+      <div class="api-error-msg-container flex items-center flex-col hidden">
+        <img src="assets/image.png" alt="" width="300px">
+        <p class="font-semibold text-2xl text-white">city not found</p>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
